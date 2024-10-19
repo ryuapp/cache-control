@@ -43,7 +43,7 @@ export function parse(header: string): CacheControlObject {
       case "no-store":
         result.noStore = true;
         break;
-      case "noTransform":
+      case "no-transform":
         result.noTransform = true;
         break;
       case "private":
