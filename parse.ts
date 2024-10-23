@@ -11,7 +11,13 @@ interface CacheControlObject {
   public?: true;
   sMaxage?: number;
 }
-
+/**
+ * Parse a Cache-Control header string into an object.
+ * This is based on RFC 9111. It only supports response directives.
+ * 
+ * @param header
+ * @returns 
+ */
 export function parse(header: string): CacheControlObject {
   const result: CacheControlObject = {};
   const directives = header
