@@ -14,17 +14,17 @@ interface CacheControlObject {
 /**
  * Parse a Cache-Control header string into an object.
  * This is based on RFC 9111. It only supports response directives.
- * 
+ *
  * @param header
- * @returns 
+ * @returns
  */
 export function parse(header: string): CacheControlObject {
   const result: CacheControlObject = {};
   const directives = header
     .toLowerCase()
-    .replace(/\s+/g, "")
+    .trim()
     .split(",")
-    .map((str) => str.split("=", 2));
+    .map((str) => str.trim().split("=", 2));
 
   for (const [name, val] of directives) {
     switch (name) {

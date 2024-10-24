@@ -9,6 +9,8 @@ const testCases = [
     maxAge: 600,
     sMaxage: 6000,
   }],
+  ["max -age   = 600", {}],
+  ["max-age= 60 0 ", { maxAge: 60 }],
   ["no-store", { noStore: true }],
   ["public, no-cache, proxy-revalidate", {
     public: true,
